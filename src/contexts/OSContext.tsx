@@ -28,7 +28,7 @@ export const OSProvider: React.FC<{ children: React.ReactNode }> = ({ children }
   const [settings, setSettings] = useState<OSSettings>({
     background_color: '#0a0a0a',
     background_image: null,
-    font_family: 'Inter',
+    font_family: 'Archivo',
     font_size: 14,
     screen_zoom: 100,
     taskbar_position: 'bottom',
