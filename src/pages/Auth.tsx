@@ -100,17 +100,17 @@ const Auth = () => {
           <div className="absolute bottom-1/4 left-1/3 w-72 h-72 bg-white/10 wave-blob animate-wave" style={{ animationDelay: '10s' }} />
         </div>
         
-        <Card className="w-full max-w-2xl relative z-10 backdrop-blur-md bg-white/90 border-white/20">
+      <Card className="w-full max-w-2xl relative z-10 backdrop-blur-md bg-white/90 border-white/20">
           <CardHeader>
-            <CardTitle className="text-gradient">DeltaOS Terms of Service</CardTitle>
-            <CardDescription>Please read and accept these rules to continue</CardDescription>
+            <CardTitle className="text-black text-2xl">DeltaOS Terms of Service</CardTitle>
+            <CardDescription className="text-black/70">Please read and accept these rules to continue</CardDescription>
           </CardHeader>
-          <CardContent className="space-y-6">
+          <CardContent className="space-y-6 text-black">
             <div className="space-y-4">
-              <h3 className="font-semibold">Rules:</h3>
+              <h3 className="font-semibold text-black">Rules:</h3>
               <ul className="list-disc list-inside space-y-2">
                 {RULES.map((rule, idx) => (
-                  <li key={idx} className="text-sm">{rule}</li>
+                  <li key={idx} className="text-sm text-black">{rule}</li>
                 ))}
               </ul>
             </div>
@@ -121,7 +121,7 @@ const Auth = () => {
                 checked={acceptedRules}
                 onCheckedChange={(checked) => setAcceptedRules(checked as boolean)}
               />
-              <label htmlFor="rules" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+              <label htmlFor="rules" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-black">
                 I accept the terms and rules
               </label>
             </div>
@@ -149,53 +149,56 @@ const Auth = () => {
       
       <Card className="w-full max-w-md relative z-10 backdrop-blur-md bg-white/90 border-white/20">
         <CardHeader>
-          <CardTitle className="text-2xl text-gradient">Welcome to DeltaOS</CardTitle>
-          <CardDescription>
+          <CardTitle className="text-2xl text-black">Welcome to DeltaOS</CardTitle>
+          <CardDescription className="text-black/70">
             {isSignUp ? 'Create your account to get started' : 'Sign in to continue'}
           </CardDescription>
         </CardHeader>
-        <CardContent className="space-y-4">
+        <CardContent className="space-y-4 text-black">
           <div className="space-y-2">
-            <Label htmlFor="email">Email</Label>
+            <Label htmlFor="email" className="text-black">Email</Label>
             <Input
               id="email"
               type="email"
               placeholder="you@example.com"
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+              className="text-black"
             />
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="password">Password</Label>
+            <Label htmlFor="password" className="text-black">Password</Label>
             <Input
               id="password"
               type="password"
               placeholder="••••••••"
               value={formData.password}
               onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+              className="text-black"
             />
           </div>
 
           {isSignUp && (
             <>
               <div className="space-y-2">
-                <Label htmlFor="name">Display Name</Label>
+                <Label htmlFor="name" className="text-black">Display Name</Label>
                 <Input
                   id="name"
                   placeholder="Your name"
                   value={formData.displayName}
                   onChange={(e) => setFormData({ ...formData, displayName: e.target.value })}
+                  className="text-black"
                 />
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="timezone">Timezone</Label>
+                <Label htmlFor="timezone" className="text-black">Timezone</Label>
                 <Select
                   value={formData.timezone}
                   onValueChange={(value) => setFormData({ ...formData, timezone: value })}
                 >
-                  <SelectTrigger id="timezone">
+                  <SelectTrigger id="timezone" className="text-black">
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
@@ -219,7 +222,7 @@ const Auth = () => {
           <div className="text-center text-sm">
             <button
               onClick={() => setIsSignUp(!isSignUp)}
-              className="text-primary hover:underline"
+              className="text-black hover:underline font-medium"
             >
               {isSignUp ? 'Already have an account? Sign in' : "Don't have an account? Sign up"}
             </button>
