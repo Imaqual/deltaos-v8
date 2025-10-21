@@ -32,6 +32,12 @@ export const OSProvider: React.FC<{ children: React.ReactNode }> = ({ children }
     font_size: 14,
     screen_zoom: 100,
     taskbar_position: 'bottom',
+    hover_color: 'hsl(195 100% 50%)',
+    theme: {
+      border_color: 'hsl(240 5% 20%)',
+      app_background: 'hsl(240 8% 8%)',
+      text_color: 'hsl(210 40% 98%)',
+    },
   });
   const { playSound } = useSound();
   const { toast } = useToast();
@@ -58,6 +64,12 @@ export const OSProvider: React.FC<{ children: React.ReactNode }> = ({ children }
         font_size: data.font_size,
         screen_zoom: data.screen_zoom,
         taskbar_position: data.taskbar_position as 'bottom' | 'left' | 'right',
+        hover_color: data.hover_color || 'hsl(195 100% 50%)',
+        theme: (data.theme as { border_color: string; app_background: string; text_color: string }) || {
+          border_color: 'hsl(240 5% 20%)',
+          app_background: 'hsl(240 8% 8%)',
+          text_color: 'hsl(210 40% 98%)',
+        },
       });
     }
   };

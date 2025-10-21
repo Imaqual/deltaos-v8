@@ -20,6 +20,12 @@ export interface OSSettings {
   font_size: number;
   screen_zoom: number;
   taskbar_position: 'bottom' | 'left' | 'right';
+  hover_color: string;
+  theme: {
+    border_color: string;
+    app_background: string;
+    text_color: string;
+  };
 }
 
 export const TIMEZONES = [

@@ -124,15 +124,6 @@ const SettingsApp = () => {
         <h3 className="text-lg font-semibold">Appearance</h3>
         <div className="space-y-3">
           <div>
-            <Label htmlFor="bgColor">Background Color</Label>
-            <Input
-              id="bgColor"
-              type="color"
-              value={settings.background_color}
-              onChange={(e) => updateSettings({ background_color: e.target.value })}
-            />
-          </div>
-          <div>
             <Label htmlFor="fontSize">Font Size</Label>
             <Input
               id="fontSize"
@@ -170,6 +161,49 @@ const SettingsApp = () => {
                 <SelectItem value="right">Right</SelectItem>
               </SelectContent>
             </Select>
+          </div>
+          <div>
+            <Label htmlFor="hoverColor">Hover Color</Label>
+            <Input
+              id="hoverColor"
+              type="color"
+              value={settings.hover_color}
+              onChange={(e) => updateSettings({ hover_color: e.target.value })}
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* Theme */}
+      <div className="space-y-4">
+        <h3 className="text-lg font-semibold">Theme Customization</h3>
+        <div className="space-y-3">
+          <div>
+            <Label htmlFor="borderColor">Border Color</Label>
+            <Input
+              id="borderColor"
+              type="color"
+              value={settings.theme.border_color}
+              onChange={(e) => updateSettings({ theme: { ...settings.theme, border_color: e.target.value } })}
+            />
+          </div>
+          <div>
+            <Label htmlFor="appBg">App Background Color</Label>
+            <Input
+              id="appBg"
+              type="color"
+              value={settings.theme.app_background}
+              onChange={(e) => updateSettings({ theme: { ...settings.theme, app_background: e.target.value } })}
+            />
+          </div>
+          <div>
+            <Label htmlFor="textColor">Text Color</Label>
+            <Input
+              id="textColor"
+              type="color"
+              value={settings.theme.text_color}
+              onChange={(e) => updateSettings({ theme: { ...settings.theme, text_color: e.target.value } })}
+            />
           </div>
         </div>
       </div>

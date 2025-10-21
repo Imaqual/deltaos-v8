@@ -61,9 +61,13 @@ const Taskbar = () => {
 
   return (
     <div
-      className={`fixed bg-card/95 backdrop-blur-sm border-border flex items-center gap-2 px-3 z-[9999] ${
+      className={`fixed bg-card backdrop-blur-sm flex items-center gap-2 px-3 z-[9999] ${
         taskbarClasses[settings.taskbar_position]
       } ${settings.taskbar_position === 'bottom' ? 'border-t' : settings.taskbar_position === 'left' ? 'border-r' : 'border-l'}`}
+      style={{
+        borderColor: settings.theme.border_color,
+        backgroundColor: settings.theme.app_background,
+      }}
     >
       {/* App Launcher */}
       <div className="flex gap-2">
@@ -72,10 +76,19 @@ const Taskbar = () => {
             key={app.id}
             onClick={() => handleAppClick(app)}
             onMouseEnter={() => playSound('hover')}
-            className="p-2 hover:bg-accent rounded-lg transition-colors group relative"
+            className="p-2 rounded-lg transition-colors group relative"
+            style={{
+              backgroundColor: 'transparent',
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.style.backgroundColor = settings.hover_color;
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.style.backgroundColor = 'transparent';
+            }}
             title={app.name}
           >
-            <app.icon className="h-5 w-5" />
+            <app.icon className="h-5 w-5" style={{ color: settings.theme.text_color }} />
             <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-popover text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
               {app.name}
             </span>

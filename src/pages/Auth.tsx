@@ -92,8 +92,15 @@ const Auth = () => {
 
   if (showRules && isSignUp) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-background p-4">
-        <Card className="w-full max-w-2xl">
+      <div className="min-h-screen flex items-center justify-center p-4 relative overflow-hidden gradient-windows">
+        {/* Animated wave blobs */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-white/10 wave-blob animate-wave" />
+          <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-white/15 wave-blob animate-wave" style={{ animationDelay: '5s' }} />
+          <div className="absolute bottom-1/4 left-1/3 w-72 h-72 bg-white/10 wave-blob animate-wave" style={{ animationDelay: '10s' }} />
+        </div>
+        
+        <Card className="w-full max-w-2xl relative z-10 backdrop-blur-md bg-white/90 border-white/20">
           <CardHeader>
             <CardTitle className="text-gradient">DeltaOS Terms of Service</CardTitle>
             <CardDescription>Please read and accept these rules to continue</CardDescription>
@@ -132,8 +139,15 @@ const Auth = () => {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background p-4">
-      <Card className="w-full max-w-md">
+    <div className="min-h-screen flex items-center justify-center p-4 relative overflow-hidden gradient-windows">
+      {/* Animated wave blobs */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-white/10 wave-blob animate-wave" />
+        <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-white/15 wave-blob animate-wave" style={{ animationDelay: '5s' }} />
+        <div className="absolute bottom-1/4 left-1/3 w-72 h-72 bg-white/10 wave-blob animate-wave" style={{ animationDelay: '10s' }} />
+      </div>
+      
+      <Card className="w-full max-w-md relative z-10 backdrop-blur-md bg-white/90 border-white/20">
         <CardHeader>
           <CardTitle className="text-2xl text-gradient">Welcome to DeltaOS</CardTitle>
           <CardDescription>

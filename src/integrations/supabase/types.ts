@@ -14,7 +14,102 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      chat_messages: {
+        Row: {
+          created_at: string
+          id: string
+          message: string
+          user_id: string
+          username: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          message: string
+          user_id: string
+          username: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          message?: string
+          user_id?: string
+          username?: string
+        }
+        Relationships: []
+      }
+      os_settings: {
+        Row: {
+          background_color: string | null
+          background_image: string | null
+          created_at: string
+          font_family: string | null
+          font_size: number | null
+          hover_color: string | null
+          id: string
+          screen_zoom: number | null
+          taskbar_position: string | null
+          theme: Json | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          background_color?: string | null
+          background_image?: string | null
+          created_at?: string
+          font_family?: string | null
+          font_size?: number | null
+          hover_color?: string | null
+          id?: string
+          screen_zoom?: number | null
+          taskbar_position?: string | null
+          theme?: Json | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          background_color?: string | null
+          background_image?: string | null
+          created_at?: string
+          font_family?: string | null
+          font_size?: number | null
+          hover_color?: string | null
+          id?: string
+          screen_zoom?: number | null
+          taskbar_position?: string | null
+          theme?: Json | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          created_at: string
+          display_name: string
+          id: string
+          terms_accepted_at: string
+          timezone: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          display_name: string
+          id: string
+          terms_accepted_at?: string
+          timezone?: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          display_name?: string
+          id?: string
+          terms_accepted_at?: string
+          timezone?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
